@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>MaxMedium</title>
+    <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,8 @@
 
   <body>
     <%= render 'shared/frondend/narbar' %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    <div>
   </body>
 </html>
