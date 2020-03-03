@@ -3,7 +3,7 @@ class CreateStories < ActiveRecord::Migration[5.2]
     create_table :stories do |t|
       t.string :title
       t.text :content
-      t.string :status
+      t.string :status, default: 'draft'
       t.references :user, foreign_key: true
 
       t.timestamps

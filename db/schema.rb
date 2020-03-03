@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_132124) do
   create_table "stories", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.string "status"
+    t.string "status", default: "draft"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
