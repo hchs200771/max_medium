@@ -11,7 +11,6 @@ class StoriesController < ApplicationController
   end
 
   def create
-    byebug
     @story = current_user.stories.new(stroy_params)
     if @story.save
       redirect_to stories_path, notice: '新增成功'
@@ -20,14 +19,21 @@ class StoriesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @story.update(stroy_params)
       redirect_to stories_path, notice: '故事更新成功'
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @story.destroy
+      redirect_to stories_path, notice: '故事刪除成功'
+    else
+      render :index
     end
   end
 
