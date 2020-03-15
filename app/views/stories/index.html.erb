@@ -1,7 +1,10 @@
 <h1 class="title is-3">故事列表</h1>
 <% @stories.each do |story| %>
   <div class="content">
-    <h2 class="title is-4"><%= story.title %></h2>
+    <h2 class="title is-4">
+      <%= link_to story.title, edit_story_path(story), class: 'has-text-grey-dark' %>
+      <%= content_tag :span, '已發佈', class: 'tag is-primary' if story.published? %>
+    </h2>
     <p><%= story.content %></p>
     <p>
       最後編輯時間：<%= time_ago_in_words(story.updated_at) %> ago
