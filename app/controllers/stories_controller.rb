@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = current_user.stories.new(stroy_params)
-    @story.status = 'published' if params[:publish]
+    @story.publish if params[:publish]
     if @story.save
       if params[:publish]
         redirect_to stories_path, notice: '已成功發布故事'
@@ -53,7 +53,7 @@ class StoriesController < ApplicationController
   private
 
   def find_story
-    @story = current_user.stories.find(params[:id])
+    @story = current_user.stories.friendly.find(params[:id])
   end
 
   def stroy_params
