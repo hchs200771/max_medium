@@ -40,6 +40,9 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'friendly_id', '~> 5.3'
 gem 'babosa', '~> 1.0', '>= 1.0.3'
 
+# webpack
+gem 'webpacker', '~> 5.1', '>= 5.1.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
