@@ -11,4 +11,8 @@ class PagesController < ApplicationController
   def user
 
   end
+
+  def demo
+
+  end
 end

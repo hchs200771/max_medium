@@ -7,9 +7,13 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "output" ]
+  static targets = ["content"]
 
-  connect() {
-    this.outputTarget.textContent = 'Hello, Stimulus!'
+  pushme() {
+    console.log(this.contentTarget.value)
+  }
+
+  pushit(){
+    console.log(this.contentTarget.value)
   }
 }
