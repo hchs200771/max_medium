@@ -20,7 +20,6 @@ class Story < ApplicationRecord
   end
 
   def normalize_friendly_id(input)
-    byebug
     input.to_s.to_slug.normalize(transliterations: :russian).to_s
   end
 
