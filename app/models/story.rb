@@ -25,7 +25,7 @@ class Story < ApplicationRecord
 
   aasm(column: 'status', no_direct_assignment: true) do
     state :draft, initial: true
-    state :published
+    state :published   # 產生published 類別方法來撈出所有狀態是published的story(像是自動設定了 scope)
 
     event :publish do
       transitions from: :draft, to: :published
