@@ -5,12 +5,19 @@
 <% end %>
 <%= form_for(story) do |form| %>
   <div class="field">
+    <%= form.label :cover_image, "封面圖" %>
+    <%= image_tag story.cover_image.variant(resize: '250x200'), class: 'cover-image' if story.cover_image.attached? %>
+    <div>
+      <%= form.file_field :cover_image%>
+    </div>
+  </div>
+  <div class="field">
     <%= form.label :title, "標題" %>
     <%= form.text_field :title, class: 'input is-primary is-medium'%>
   </div>
   <div class="field">
     <%= form.label :content, "內容" %>
-    <%= form.text_area :content, rows: 10, class: 'input is-primary is-medium'%>
+    <%= form.text_area :content, rows: 10, class: 'textarea is-primary'%>
   </div>
   <div class="field">
     <%= form.submit "儲存草稿", name: 'save_as_draft', class: "button is-light" if story.draft? %>
