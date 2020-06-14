@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'friendly_id', '~> 5.3'
 gem 'babosa', '~> 1.0', '>= 1.0.3'
+gem 'paranoia', '~> 2.4', '>= 2.4.2'
 
 # webpack
 gem 'webpacker', '~> 5.1', '>= 5.1.1'

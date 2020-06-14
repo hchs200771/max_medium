@@ -1,7 +1,10 @@
 class Story < ApplicationRecord
-  include AASM
+  acts_as_paranoid
+
   extend FriendlyId
   friendly_id :slug_candidate, use: :slugged
+
+  include AASM
 
   # relationships
   belongs_to :user
@@ -15,9 +18,6 @@ class Story < ApplicationRecord
   scope :published_stories_with_image, -> { published.with_attached_cover_image.order(created_at: :desc).includes(:user) }
 
   # instance methods
-  def destroy
-    update(deleted_at: Time.current)
-  end
 
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize(transliterations: :russian).to_s
