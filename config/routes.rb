@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get '@:user_name', to: 'pages#user', as: :user_page
 
   resources :stories
+
+  resources :stories do
+    resources :comments, only: [:create]
+  end
 end
