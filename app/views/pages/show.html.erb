@@ -11,10 +11,10 @@
     <article class="content">
       <%= image_tag(@story.cover_image.variant(resize: '1000x500'), class: 'cover-image') if @story.cover_image.attached? %>
       <%=  simple_format(@story.content) %>
-      <footer>
-        <%= link_to '#', class: 'clapButton is-size-2 has-text-primary' do %>
+      <footer data-controller="story">
+        <%= link_to '#', class: 'clapButton is-size-2 has-text-primary', data: { action: 'story#addClap', slug: @story.slug } do %>
           <i class="far fa-hand-spock"></i>
-          <span class="clapCount">0</span>
+          <span class="clapCount" data-target="story.clapCount"><%= @story.clap %></span>
         <% end %>
       </footer>
     </article>
