@@ -2,9 +2,16 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
-  resources :users, only: [] do
-    member do
-      post :follow
+  namespace :api do
+    resources :users, only: [] do
+      member do
+        post :follow
+      end
+    end
+    resources :stories, only: [] do
+      member do
+        post :clap
+      end
     end
   end
 
@@ -16,12 +23,7 @@ Rails.application.routes.draw do
   # /@maxharry/   顯示該作者的所有文章
   get '@:user_name', to: 'pages#user', as: :user_page
 
-  resources :stories
-
   resources :stories do
     resources :comments, only: [:create]
-    member do
-      post :clap
-    end
   end
 end
