@@ -8,7 +8,7 @@ export default class extends Controller {
     event.preventDefault()
     let target = this.clapCountTarget
     let slug = event.currentTarget.dataset.slug
-    axios.post(`/stories/${slug}/clap`)
+    axios.post(`/api/stories/${slug}/clap`)
          .then(function (response) {
            let status = response.data.status
            switch (status) {

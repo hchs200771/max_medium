@@ -61,6 +61,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'hirb-unicode', '~> 0.0.5'
+  gem 'awesome_print'
 end
 
 group :test do

@@ -29,18 +29,24 @@ export default class extends Controller {
     event.preventDefault()
     let link = event.currentTarget
     let slug = link.dataset.slug
+    let icon = this.bookmarkTarget
 
     axios.post(`/api/stories/${slug}/bookmark`)
          .then(function (response) {
            let status = response.data.status
-           console.log(status)
-          //  switch (status) {
-          //    case 'sign_in_first':
-          //      alert('請先登入')
-          //      break
-          //    default:
-          //      button.innerHTML = status
-          //  }
+           switch (status) {
+             case 'sign_in_first':
+               alert('請先登入')
+               break
+             case 'Unbookmarked':
+               icon.classList.add("far")
+               icon.classList.remove("fas")
+               break
+             case 'Bookmarked':
+               icon.classList.add("fas")
+               icon.classList.remove("far")
+               break
+           }
          })
          .catch(function (error) {
            console.log(error)

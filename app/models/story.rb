@@ -10,6 +10,7 @@ class Story < ApplicationRecord
   belongs_to :user
   has_one_attached :cover_image
   has_many :comments
+  has_many :bookmarks
 
   # validations
   validates :title, presence: true
