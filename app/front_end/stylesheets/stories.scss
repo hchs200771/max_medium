@@ -1,10 +1,16 @@
 // Place all the styles related to the stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import './editor.scss';
+
 form {
   img.cover-image {
     display: block;
   }
+}
+
+form.story-editor {
+  margin-bottom: 2em;
 }
 
 .story-content {
