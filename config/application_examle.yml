@@ -1,0 +1,7 @@
+# Add configuration values here, as shown below.
+price_vip: '10'
+price_platinum: '20'
+
+braintree_mechant_id: 'your_mechant_id'
+braintree_public_key: 'your_public_key'
+braintree_private_key: 'your_private_key'

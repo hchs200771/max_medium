@@ -33,3 +33,5 @@
 yarn-debug.log*
 .yarn-integrity
 .pryrc
+# Ignore application configuration
+/config/application.yml
